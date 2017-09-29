@@ -64,6 +64,9 @@ nnoremap <leader>g :Rg<space>
 " Syntax hilighting by default
 syntax on
 
+" Hide buffers when opening a new one instead of closing
+set hidden
+
 " Relative line numbers
 set number
 set relativenumber

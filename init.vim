@@ -33,6 +33,8 @@ Plug 'jremmen/vim-ripgrep'
 Plug 'tpope/vim-surround'
 " Git wrapper
 Plug 'tpope/vim-fugitive'
+" Easy motion
+Plug 'easymotion/vim-easymotion'
 
 call plug#end()
 

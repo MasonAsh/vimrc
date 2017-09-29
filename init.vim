@@ -57,7 +57,7 @@ nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 nnoremap gS :ArgWrap<CR>
 
 " ripgrep with ,g
-nnoremap <leader>g :Rg
+nnoremap <leader>g :Rg<space>
 
 " Syntax hilighting by default
 syntax on

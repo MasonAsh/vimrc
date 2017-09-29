@@ -41,7 +41,7 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Remap leader key to ,
-let mapleader = ","
+let mapleader = " "
 
 " Use shift+enter to go to exit insert mode 
 " (Note: terminal versions usually can't bind shift+enter)

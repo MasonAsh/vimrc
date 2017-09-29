@@ -31,6 +31,8 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'jremmen/vim-ripgrep'
 " Surround text with '({[ etc
 Plug 'tpope/vim-surround'
+" Git wrapper
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 

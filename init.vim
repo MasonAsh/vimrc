@@ -54,6 +54,8 @@ let mapleader = " "
 " Use shift+enter to go to exit insert mode 
 " (Note: terminal versions usually can't bind shift+enter)
 inoremap <S-CR> <ESC>
+inoremap jk <ESC>
+inoremap kj <ESC>
 
 " ctrl+j/k deletes blank line above or below cursor, alt+j/k inserts
 nnoremap <silent><C-A-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>

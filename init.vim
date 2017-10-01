@@ -93,12 +93,10 @@ set expandtab
 " Needed to allow ctrl+w in insert mode to delete words
 set backspace=indent,eol,start
 
+let s:currentFile = expand('<sfile>')
+
 " EVimRC -- handy command to edit this config file
-if has("win32")
-    command! EVimRC :e ~/AppData/Local/nvim/init.vim
-elseif has("unix")
-    command! EVimRC :e ~/.config/nvim/init.vim
-endif
+command! EVimRC execute 'edit ' . s:currentFile
 
 " If we have acess to fish or zsh, use the superior shell over bash
 if executable('fish')

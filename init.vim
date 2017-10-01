@@ -132,7 +132,7 @@ let g:miniBufExplModSelTarget = 1
 " autocmd VimEnter * NERDTree
 " autocmd VimEnter * wincmd p
 
-nnoremap <leader>l :NERDTree<cr>
+nnoremap <leader>l :NERDTreeToggle<cr>
 
 " If NERDTree is the last remaining window then just quit
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

@@ -164,14 +164,33 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
  
 let g:deoplete#enable_at_startup = 1
 
-" RACER_PATH and RUST_SRC_PATH environment should be defined to use rust autocompletion
-
-if !empty($RACER_PATH)
-    let g:deoplete#sources#rust#racer_binary = '$RACER_PATH'
+if exists('g:racer_path')
+    let g:deoplete#sources#rust#racer_binary = g:racer_path
+else
+    if !empty($RACER_PATH)
+        let g:deoplete#sources#rust#racer_binary = '$RACER_PATH'
+    elseif executable('racer')
+        let g:deoplete#sources#rust#racer_binary = systemlist('which racer')[0]
+    endif
 endif
 
-if !empty($RUST_SRC_PATH)
-    let g:deoplete#sources#rust#rust_source_path = '$RUST_SRC_PATH'
+" localconfig.vim can fill out g:rust_source_path
+if exists('g:rust_source_path') 
+    let g:deoplete#sources#rust#rust_source_path = g:rust_source_path
+else
+    " Otherwise try and figure it out manually
+    if !empty($RUST_SRC_PATH)
+        let g:deoplete#sources#rust#rust_source_path = '$RUST_SRC_PATH'
+    elseif executable('rustc')
+        " if src installed via rustup, we can get it by running 
+        " rustc --print sysroot then appending the rest of the path
+        let rustc_root = systemlist('rustc --print sysroot')[0]
+        " eliminate any trailing or prefixing whitespace 
+        let rustc_src_dir = rustc_root . '/lib/rustlib/src/rust/src'
+        if isdirectory(rustc_src_dir)
+            let g:deoplete#sources#rust#rust_source_path = rustc_src_dir
+        endif
+    endif
 endif
 
 let g:deoplete#sources#rust#show_duplicates = 1

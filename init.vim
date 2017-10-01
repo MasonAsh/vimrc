@@ -1,5 +1,5 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"""                 Plugins                    """
+"                   Plugins                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " source localconfig.vim for nonportable configurations
@@ -45,7 +45,7 @@ Plug 'easymotion/vim-easymotion'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"""                 General                    """
+"                   General                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Remap leader key to ,
@@ -115,7 +115,7 @@ let g:SuperTabDefaultCompletionType = 'context'
 set modelines=0
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"""             Mini Buf Explorer              """
+"               Mini Buf Explorer                "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:miniBufExplBuffersNeeded = 1
@@ -125,7 +125,7 @@ let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"""                NERD Tree                   """
+"                  NERD Tree                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Open NERDTree at startup and then switch back to source window
@@ -139,7 +139,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"""                  Deoplete                  """
+"                    Deoplete                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""
  
 let g:deoplete#enable_at_startup = 1

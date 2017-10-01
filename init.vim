@@ -114,6 +114,12 @@ let g:SuperTabDefaultCompletionType = 'context'
 " modelines are a potential security issue, so disable them
 set modelines=0
 
+" Window navigation mappings
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "               Mini Buf Explorer                "
 """"""""""""""""""""""""""""""""""""""""""""""""""

@@ -48,7 +48,7 @@ call plug#end()
 "                   General                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Remap leader key to ,
+" Remap leader key to space
 let mapleader = " "
 
 " Use shift+enter to go to exit insert mode 
@@ -64,7 +64,7 @@ nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 " map gS to ArgWrap to split parameters onto multiple lines
 nnoremap gS :ArgWrap<CR>
 
-" ripgrep with ,g
+" ripgrep with <space>g
 nnoremap <leader>g :Rg<space>
 
 " Syntax hilighting by default
@@ -105,7 +105,7 @@ elseif executable('zsh')
     set shell=zsh
 endif
 
-" Bind ctrlp to ,f
+" Bind ctrlp to <space>f
 let g:ctrlp_map = '<leader>f'
 
 " Use context sensitive supertab completion
@@ -121,7 +121,7 @@ set modelines=0
 let g:miniBufExplBuffersNeeded = 1
 let g:miniBufExplMapWindowNavVim = 1 
 let g:miniBufExplMapWindowNavArrows = 1 
-let g:miniBufExplMapCTabSwitchBufs = 1 
+let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

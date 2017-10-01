@@ -135,7 +135,16 @@ let g:miniBufExplMapWindowNavVim = 1
 let g:miniBufExplMapWindowNavArrows = 1 
 let g:miniBufExplMapCTabSwitchBufs = 1
 let g:miniBufExplModSelTarget = 1 
-map <leader>t :MBEFocus<cr>
+
+function! JumpPreviousWindow()
+    execute winnr('#') . 'wincmd w'
+endfunction
+
+map <silent> <leader>t :MBEFocus<cr>
+
+" Pressing escape within the MBE window will go to the previous window, very
+" convenient!
+autocmd FileType minibufexpl nnoremap <silent> <buffer> <esc> :call JumpPreviousWindow()<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                  NERD Tree                     "

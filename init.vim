@@ -111,6 +111,9 @@ let g:ctrlp_map = '<leader>f'
 " Use context sensitive supertab completion
 let g:SuperTabDefaultCompletionType = 'context'
 
+" modelines are a potential security issue, so disable them
+set modelines=0
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 """             Mini Buf Explorer              """
 """"""""""""""""""""""""""""""""""""""""""""""""""

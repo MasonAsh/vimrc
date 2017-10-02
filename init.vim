@@ -17,8 +17,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'ctrlpvim/ctrlp.vim'
 " Autocompletion engine for neovim
 Plug 'Shougo/deoplete.nvim'
-" Deoplete for rust (via racer)
-Plug 'sebastianmarkow/deoplete-rust'
 " Allows browsing buffers easily
 Plug 'fholgado/minibufexpl.vim'
 " File explorer
@@ -43,6 +41,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'easymotion/vim-easymotion'
 " make/lint framework
 Plug 'neomake/neomake'
+" Racer support for rust completion
+Plug 'racer-rust/vim-racer'
 
 call plug#end()
 
@@ -168,34 +168,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """"""""""""""""""""""""""""""""""""""""""""""""""
  
 let g:deoplete#enable_at_startup = 1
-
-if exists('g:racer_path')
-    let g:deoplete#sources#rust#racer_binary = g:racer_path
-else
-    if !empty($RACER_PATH)
-        let g:deoplete#sources#rust#racer_binary = '$RACER_PATH'
-    elseif executable('racer')
-        let g:deoplete#sources#rust#racer_binary = systemlist('which racer')[0]
-    endif
-endif
-
-" localconfig.vim can fill out g:rust_source_path
-if exists('g:rust_source_path') 
-    let g:deoplete#sources#rust#rust_source_path = g:rust_source_path
-else
-    " Otherwise try and figure it out manually
-    if !empty($RUST_SRC_PATH)
-        let g:deoplete#sources#rust#rust_source_path = '$RUST_SRC_PATH'
-    elseif executable('rustc')
-        " if src installed via rustup, we can get it by running 
-        " rustc --print sysroot then appending the rest of the path
-        let rustc_root = systemlist('rustc --print sysroot')[0]
-        let rustc_src_dir = rustc_root . '/lib/rustlib/src/rust/src'
-        if isdirectory(rustc_src_dir)
-            let g:deoplete#sources#rust#rust_source_path = rustc_src_dir
-        endif
-    endif
-endif
 
 let g:deoplete#sources#rust#show_duplicates = 1
 

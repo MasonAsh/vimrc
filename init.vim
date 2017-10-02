@@ -74,7 +74,7 @@ nnoremap <silent><A-k> :set paste<CR>m`O<Esc>``:set nopaste<CR>
 nnoremap gS :ArgWrap<CR>
 
 " ripgrep with <space>g
-nnoremap <leader>g :Rg<space>
+nnoremap <leader>r :Rg<space>
 
 " Syntax hilighting by default
 syntax on
@@ -211,4 +211,14 @@ let g:neomake_open_list=2
 
 " Automake when writing a buffer and normal mode changes (after 750ms)
 call neomake#configure#automake('nw', 750)
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    fugitive                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap <leader>gd :Gdiff<CR>
+nnoremap <leader>gw :Gwrite<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gc :Gcommit<CR>
 

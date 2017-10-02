@@ -112,10 +112,6 @@ elseif executable('zsh')
     set shell=zsh
 endif
 
-" Bind ctrlp to <space>f
-let g:ctrlp_map = '<leader>f'
-" Use ctrlp to search files, buffers, and MRU files
-let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Use context sensitive supertab completion
 let g:SuperTabDefaultCompletionType = 'context'
@@ -222,4 +218,16 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>gw :Gwrite<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gc :Gcommit<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     CtrlP                      "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Bind ctrlp to <space>f
+let g:ctrlp_map = '<leader>f'
+" Use ctrlp to search files, buffers, and MRU files
+let g:ctrlp_cmd = 'CtrlPMixed'
+" Quickly search and switch buffers
+nnoremap <leader>b :CtrlPBuffer<CR>
 

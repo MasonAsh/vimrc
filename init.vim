@@ -41,6 +41,8 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 " Easy motion
 Plug 'easymotion/vim-easymotion'
+" make/lint framework
+Plug 'neomake/neomake'
 
 call plug#end()
 
@@ -198,4 +200,15 @@ else
 endif
 
 let g:deoplete#sources#rust#show_duplicates = 1
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    Neomake                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Automatically open error list
+let g:neomake_open_list=2
+
+" Automake when writing a buffer and normal mode changes (after 750ms)
+call neomake#configure#automake('nw', 750)
 

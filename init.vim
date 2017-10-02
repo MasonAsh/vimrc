@@ -57,6 +57,11 @@ inoremap <S-CR> <ESC>
 inoremap jk <ESC>
 inoremap kj <ESC>
 
+" Quickly write a file using <space>s
+nnoremap <leader>s :w<cr>
+" Quickly write a file then quit using <space>q
+nnoremap <leader>q :wq<cr>
+
 " ctrl+j/k deletes blank line above or below cursor, alt+j/k inserts
 nnoremap <silent><C-A-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
 nnoremap <silent><C-A-k> m`:silent -g/\m^\s*$/d<CR>``:noh<CR>

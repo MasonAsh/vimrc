@@ -114,6 +114,8 @@ endif
 
 " Bind ctrlp to <space>f
 let g:ctrlp_map = '<leader>f'
+" Use ctrlp to search files, buffers, and MRU files
+let g:ctrlp_cmd = 'CtrlPMixed'
 
 " Use context sensitive supertab completion
 let g:SuperTabDefaultCompletionType = 'context'
@@ -211,7 +213,6 @@ let g:neomake_open_list=2
 
 " Automake when writing a buffer and normal mode changes (after 750ms)
 call neomake#configure#automake('nw', 750)
-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                    fugitive                    "

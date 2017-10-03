@@ -132,6 +132,15 @@ nmap <silent> <C-l> :wincmd l<CR>
 " Hide highlighted text after a search
 nnoremap <silent> <leader><cr> :noh<cr>
 
+" Quickly increase and decrease split size with +/-
+" CTRL+left/right to increase/decrease vertical split size
+if bufwinnr(1)
+    nmap + <C-W>+
+    nmap - <C-W>-
+    nmap <C-right> <C-W>>
+    nmap <C-left> <C-W><
+endif
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "               Mini Buf Explorer                "
 """"""""""""""""""""""""""""""""""""""""""""""""""

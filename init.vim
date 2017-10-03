@@ -43,6 +43,8 @@ Plug 'easymotion/vim-easymotion'
 Plug 'neomake/neomake'
 " Racer support for rust completion
 Plug 'racer-rust/vim-racer'
+" Distraction free mode
+Plug 'junegunn/goyo.vim'
 
 call plug#end()
 
@@ -140,6 +142,11 @@ if bufwinnr(1)
     nmap <C-right> <C-W>>
     nmap <C-left> <C-W><
 endif
+
+" Show line numbers in Goyo
+let g:goyo_linenr = 1
+
+" END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "               Mini Buf Explorer                "

@@ -196,7 +196,7 @@ let g:deoplete#sources#rust#show_duplicates = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Automatically open error list
-let g:neomake_open_list=2
+" let g:neomake_open_list=2
 
 " Automake when writing a buffer and normal mode changes (after 750ms)
 call neomake#configure#automake('nw', 750)

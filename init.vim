@@ -129,6 +129,9 @@ nmap <silent> <C-j> :wincmd j<CR>
 nmap <silent> <C-h> :wincmd h<CR>
 nmap <silent> <C-l> :wincmd l<CR>
 
+" Hide highlighted text after a search
+nnoremap <silent> <leader><cr> :noh<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "               Mini Buf Explorer                "
 """"""""""""""""""""""""""""""""""""""""""""""""""

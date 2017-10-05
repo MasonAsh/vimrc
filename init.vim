@@ -45,6 +45,10 @@ Plug 'neomake/neomake'
 Plug 'racer-rust/vim-racer'
 " Distraction free mode
 Plug 'junegunn/goyo.vim'
+" Text alignment (required for vim-markdown)
+Plug 'godlygeek/tabular'
+" Markdown
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 

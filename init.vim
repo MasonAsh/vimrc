@@ -22,7 +22,7 @@ Plug 'fholgado/minibufexpl.vim'
 " File explorer
 Plug 'scrooloose/nerdtree'
 " nice python plugin (requires neovim with python 3 support)
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', {'branch': 'develop'}
 " Syntax hilighting for rust
 Plug 'rust-lang/rust.vim'
 " Activate code completion engine using tab

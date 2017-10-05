@@ -229,3 +229,12 @@ let g:ctrlp_map = '<leader>f'
 " Quickly search and switch buffers
 nnoremap <leader>b :CtrlPBuffer<CR>
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                     pymode                     "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:pymode_rope_goto_definition_bind = 'gd'
+
+" Default bind is <leader>b which conflicts with my CtrlPBuffer bind
+let g:pymode_breakpoint_bind = '<leader>pb'

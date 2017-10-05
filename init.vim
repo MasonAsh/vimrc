@@ -150,6 +150,11 @@ endif
 " Show line numbers in Goyo
 let g:goyo_linenr = 1
 
+" Binds to exit terminal mode easier
+tnoremap <Esc> <C-\><C-n>
+tnoremap jk    <C-\><C-n>
+tnoremap kj    <C-\><C-n>
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

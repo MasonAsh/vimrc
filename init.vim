@@ -155,6 +155,8 @@ tnoremap <Esc> <C-\><C-n>
 tnoremap jk    <C-\><C-n>
 tnoremap kj    <C-\><C-n>
 
+set mouse=a
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

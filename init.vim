@@ -49,6 +49,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 " Markdown
 Plug 'plasticboy/vim-markdown'
+" Commenting code
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 

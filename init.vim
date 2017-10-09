@@ -159,6 +159,8 @@ tnoremap kj    <C-\><C-n>
 
 set mouse=a
 
+inoremap ;; <END>;
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

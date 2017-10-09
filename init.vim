@@ -11,8 +11,6 @@ endif
 " Using vim-plug
 call plug#begin('~/vimplug')
 
-" Automatically insert matching '({[ etc.
-Plug 'jiangmiao/auto-pairs'
 " Fuzzy file finder 
 Plug 'ctrlpvim/ctrlp.vim'
 " Autocompletion engine for neovim
@@ -160,6 +158,8 @@ tnoremap kj    <C-\><C-n>
 set mouse=a
 
 inoremap ;; <END>;
+
+inoremap {<CR> {<CR>}<ESC>ko
 
 " END GENERAL
 

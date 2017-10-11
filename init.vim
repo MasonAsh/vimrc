@@ -162,6 +162,8 @@ inoremap ;; <END>;
 
 inoremap {<CR> {<CR>}<ESC>ko
 
+command! InsertDate :put! =strftime('%m/%d/%y')
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

@@ -262,4 +262,4 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 " Default <tab> binding conflicts with supertab
-let g:UltiSnipsExpandTrigger = "<leader>t"
+let g:UltiSnipsExpandTrigger = "\\t"

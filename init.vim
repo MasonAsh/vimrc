@@ -49,6 +49,8 @@ Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 " Commenting code
 Plug 'scrooloose/nerdcommenter'
+" Personal wiki for notes, etc.
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
 

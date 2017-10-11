@@ -51,6 +51,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdcommenter'
 " Personal wiki for notes, etc.
 Plug 'vimwiki/vimwiki'
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()
 
@@ -120,10 +123,6 @@ elseif executable('zsh')
     set shell=zsh
 endif
 
-
-" Use context sensitive supertab completion
-let g:SuperTabDefaultCompletionType = 'context'
-
 " modelines are a potential security issue, so disable them
 set modelines=0
 
@@ -179,7 +178,7 @@ function! JumpPreviousWindow()
     execute winnr('#') . 'wincmd w'
 endfunction
 
-map <silent> <leader>t :MBEFocus<cr>
+map <silent> <leader>m :MBEFocus<cr>
 
 " Pressing escape within the MBE window will go to the previous window, very
 " convenient!
@@ -247,6 +246,7 @@ let g:pymode_rope_goto_definition_bind = 'gd'
 " Default bind is <leader>b which conflicts with my CtrlPBuffer bind
 let g:pymode_breakpoint_bind = '<leader>pb'
 
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                     racer                      " 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -255,3 +255,11 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                   UltiSnips                    "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Default <tab> binding conflicts with supertab
+let g:UltiSnipsExpandTrigger = "<leader>t"

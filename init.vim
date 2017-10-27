@@ -56,6 +56,10 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 " Swap text around easily
 Plug 'tommcdo/vim-exchange'
+" Visual increment
+Plug 'triglav/vim-visual-increment'
+" Sneak, a very handy motion
+Plug 'justinmk/vim-sneak'
 
 call plug#end()
 

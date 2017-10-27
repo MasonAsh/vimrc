@@ -54,6 +54,8 @@ Plug 'vimwiki/vimwiki'
 " Snippets
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
+" Swap text around easily
+Plug 'tommcdo/vim-exchange'
 
 call plug#end()
 

@@ -15,8 +15,6 @@ call plug#begin('~/vimplug')
 Plug 'ctrlpvim/ctrlp.vim'
 " Autocompletion engine for neovim
 Plug 'Shougo/deoplete.nvim'
-" Allows browsing buffers easily
-Plug 'fholgado/minibufexpl.vim'
 " File explorer
 Plug 'scrooloose/nerdtree'
 " nice python plugin (requires neovim with python 3 support)
@@ -60,6 +58,9 @@ Plug 'tommcdo/vim-exchange'
 Plug 'triglav/vim-visual-increment'
 " Sneak, a very handy motion
 Plug 'justinmk/vim-sneak'
+" Statusline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -244,6 +245,13 @@ let g:ctrlp_map = '<leader>f'
 " Quickly search and switch buffers
 nnoremap <leader>b :CtrlPBuffer<CR>
 
+let ctrlp_extensions = ['tag']
+
+nnoremap <leader>t :CtrlPTag<CR>
+
+" rust tags with ctrlp
+autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
+autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                     pymode                     "
@@ -271,3 +279,11 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 " Default <tab> binding conflicts with supertab
 let g:UltiSnipsExpandTrigger = "\\t"
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                    Airline                     " 
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme = 'molokai'

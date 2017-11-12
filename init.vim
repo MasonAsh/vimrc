@@ -171,6 +171,8 @@ inoremap {<CR> {<CR>}<ESC>ko
 
 command! InsertDate :put! =strftime('%m/%d/%y')
 
+set ignorecase smartcase
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

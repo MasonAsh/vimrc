@@ -11,7 +11,7 @@ endif
 " Using vim-plug
 call plug#begin('~/vimplug')
 
-" Fuzzy file finder 
+" Fuzzy file finder
 Plug 'ctrlpvim/ctrlp.vim'
 " Autocompletion engine for neovim
 Plug 'Shougo/deoplete.nvim'
@@ -71,7 +71,7 @@ call plug#end()
 " Remap leader key to space
 let mapleader = " "
 
-" Use shift+enter to go to exit insert mode 
+" Use shift+enter to go to exit insert mode
 " (Note: terminal versions usually can't bind shift+enter)
 inoremap <S-CR> <ESC>
 inoremap jk <ESC>
@@ -180,10 +180,10 @@ set ignorecase smartcase
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:miniBufExplBuffersNeeded = 1
-let g:miniBufExplMapWindowNavVim = 1 
-let g:miniBufExplMapWindowNavArrows = 1 
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
 let g:miniBufExplMapCTabSwitchBufs = 1
-let g:miniBufExplModSelTarget = 1 
+let g:miniBufExplModSelTarget = 1
 
 function! JumpPreviousWindow()
     execute winnr('#') . 'wincmd w'
@@ -212,7 +212,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                    Deoplete                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""
- 
+
 let g:deoplete#enable_at_startup = 1
 
 let g:deoplete#sources#rust#show_duplicates = 1
@@ -266,7 +266,7 @@ let g:pymode_breakpoint_bind = '<leader>pb'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"                     racer                      " 
+"                     racer                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 au FileType rust nmap gd <Plug>(rust-def)
@@ -284,7 +284,7 @@ let g:UltiSnipsExpandTrigger = "\\t"
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"                    Airline                     " 
+"                    Airline                     "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:airline#extensions#tabline#enabled = 1

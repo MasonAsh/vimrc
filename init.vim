@@ -61,6 +61,9 @@ Plug 'justinmk/vim-sneak'
 " Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+" typescript
+Plug 'mhartington/nvim-typescript'
+Plug 'HerringtonDarkholme/yats.vim'
 
 call plug#end()
 

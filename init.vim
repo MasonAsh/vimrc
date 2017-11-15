@@ -1,9 +1,3 @@
-" source localconfig.vim for nonportable configurations
-let s:localConfigPath = expand('<sfile>:p:h') . '/localconfig.vim'
-if filereadable(s:localConfigPath)
-    execute 'source ' fnameescape(s:localConfigPath)
-endif
-
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                   Plugins                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -299,3 +293,14 @@ let g:airline_theme = 'molokai'
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 autocmd BufWritePost *.tex :!pdflatex %
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"              Local Configuration               "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" source localconfig.vim for nonportable configurations
+let s:localConfigPath = expand('<sfile>:p:h') . '/localconfig.vim'
+if filereadable(s:localConfigPath)
+    execute 'source ' fnameescape(s:localConfigPath)
+endif

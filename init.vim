@@ -63,6 +63,8 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'dracula/vim'
 " Git diff information in number line
 Plug 'airblade/vim-gitgutter'
+" Switching between tmux and vim windows with same binding
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 

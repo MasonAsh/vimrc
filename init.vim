@@ -58,6 +58,8 @@ Plug 'vim-airline/vim-airline-themes'
 " typescript
 Plug 'mhartington/nvim-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
+" dracula color scheme
+Plug 'dracula/vim'
 
 call plug#end()
 
@@ -100,11 +102,6 @@ set hidden
 " Relative line numbers
 set number
 set relativenumber
-
-" Great theme
-colorscheme molokai
-" Even greater with 256 colors
-let g:rehash256 = 1
 
 " Sane tab defaults
 set tabstop=4

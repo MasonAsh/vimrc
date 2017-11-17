@@ -6,7 +6,8 @@
 call plug#begin('~/vimplug')
 
 " Fuzzy file finder
-Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " Autocompletion engine for neovim
 Plug 'Shougo/deoplete.nvim'
 " File explorer
@@ -241,21 +242,23 @@ nnoremap <leader>gc :Gcommit<CR>
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
-"                     CtrlP                      "
+"                      FZF                       "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-" Bind ctrlp to <space>f
-let g:ctrlp_map = '<leader>f'
+" Bind fzf to <space>f
+nnoremap <silent><leader>f :Files<CR>
 " Quickly search and switch buffers
-nnoremap <leader>b :CtrlPBuffer<CR>
+nnoremap <silent><leader>b :Windows<CR>
+" Browse tags
+nnoremap <silent><leader>t :Tags<CR>
 
-let ctrlp_extensions = ['tag']
+" Press esc in fzf to close it
+autocmd! FileType fzf tnoremap <buffer> <esc> <c-c>
 
-nnoremap <leader>t :CtrlPTag<CR>
-
-" rust tags with ctrlp
+" rust tags with fzf
 autocmd BufRead *.rs :setlocal tags=./rusty-tags.vi;/
 autocmd BufWrite *.rs :silent! exec "!rusty-tags vi --quiet --start-dir=" . expand('%:p:h') . "&" <bar> redraw!
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                     pymode                     "

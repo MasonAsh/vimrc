@@ -170,6 +170,9 @@ command! InsertDate :put! =strftime('%m/%d/%y')
 
 set ignorecase smartcase
 
+" Jump to previous file using space space
+nmap <leader><leader> <c-^>
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

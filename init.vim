@@ -170,6 +170,9 @@ set ignorecase smartcase
 " Jump to previous file using space space
 nmap <leader><leader> <c-^>
 
+nnoremap <tab> :bnext!<cr>
+nnoremap <tab> :bprev!<cr><Paste>
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

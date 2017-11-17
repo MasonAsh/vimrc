@@ -60,6 +60,8 @@ Plug 'mhartington/nvim-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
 " dracula color scheme
 Plug 'dracula/vim'
+" Git diff information in number line
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 

@@ -288,7 +288,7 @@ let g:UltiSnipsExpandTrigger = "\\t"
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'molokai'
+let g:airline_theme = 'dracula'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

@@ -176,7 +176,7 @@ set ignorecase smartcase
 nmap <leader><leader> <c-^>
 
 nnoremap <tab> :bnext!<cr>
-nnoremap <tab> :bprev!<cr><Paste>
+nnoremap <S-tab> :bprev!<cr>
 
 " END GENERAL
 

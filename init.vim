@@ -250,7 +250,7 @@ nnoremap <leader>gc :Gcommit<CR>
 " Bind fzf to <space>f
 nnoremap <silent><leader>f :Files<CR>
 " Quickly search and switch buffers
-nnoremap <silent><leader>b :Windows<CR>
+nnoremap <silent><leader>b :Buffers<CR>
 " Browse tags
 nnoremap <silent><leader>t :Tags<CR>
 

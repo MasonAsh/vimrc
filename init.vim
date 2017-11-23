@@ -178,6 +178,10 @@ nmap <leader><leader> <c-^>
 nnoremap <tab> :bnext!<cr>
 nnoremap <S-tab> :bprev!<cr>
 
+" Supertab will go in reverse direction by default,
+" so fix that
+let g:SuperTabDefaultCompletionType = "<c-n>"
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

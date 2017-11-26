@@ -182,6 +182,8 @@ nnoremap <S-tab> :bprev!<cr>
 " so fix that
 let g:SuperTabDefaultCompletionType = "<c-n>"
 
+let g:tex_flavor = "latex"
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""

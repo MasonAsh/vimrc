@@ -1,3 +1,8 @@
+" airline does what powerline does but actually works and doesn't have python
+" errors.
+let g:powerline_loaded = 1
+
+
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                   Plugins                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -8,16 +13,12 @@ call plug#begin('~/vimplug')
 " Fuzzy file finder
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-" Autocompletion engine for neovim
-Plug 'Shougo/deoplete.nvim'
 " File explorer
 Plug 'scrooloose/nerdtree'
 " nice python plugin (requires neovim with python 3 support)
 Plug 'python-mode/python-mode', {'branch': 'develop'}
 " Syntax hilighting for rust
 Plug 'rust-lang/rust.vim'
-" Activate code completion engine using tab
-Plug 'ervandew/supertab'
 " Split arguments onto multiple lines with one convenient mapping
 Plug 'FooSoft/vim-argwrap'
 " Python indentation
@@ -30,8 +31,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
 " Easy motion
 Plug 'easymotion/vim-easymotion'
-" make/lint framework
-Plug 'neomake/neomake'
 " Racer support for rust completion
 Plug 'racer-rust/vim-racer'
 " Distraction free mode
@@ -59,18 +58,31 @@ Plug 'vim-airline/vim-airline-themes'
 " typescript
 Plug 'mhartington/nvim-typescript'
 Plug 'HerringtonDarkholme/yats.vim'
-" dracula color scheme
-Plug 'dracula/vim'
 " Git diff information in number line
 Plug 'airblade/vim-gitgutter'
 " Switching between tmux and vim windows with same binding
 Plug 'christoomey/vim-tmux-navigator'
+" Syntax checking
+Plug 'w0rp/ale'
+" Nice light theme
+Plug 'NLKNguyen/papercolor-theme'
+" clang-format
+Plug 'rhysd/vim-clang-format'
+" Completions
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                   General                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
+
+syntax on
+
+set t_Co=256
+
+set background=light
+colorscheme PaperColor
 
 " Remap leader key to space
 let mapleader = " "
@@ -97,9 +109,6 @@ nnoremap gS :ArgWrap<CR>
 
 " ripgrep with <space>g
 nnoremap <leader>r :Rg<space>
-
-" Syntax hilighting by default
-syntax on
 
 " Hide buffers when opening a new one instead of closing
 set hidden
@@ -131,6 +140,8 @@ endif
 
 " modelines are a potential security issue, so disable them
 set modelines=0
+
+set list
 
 " Window navigation mappings
 nmap <silent> <A-Up> :wincmd k<CR>
@@ -178,11 +189,25 @@ nmap <leader><leader> <c-^>
 nnoremap <tab> :bnext!<cr>
 nnoremap <S-tab> :bprev!<cr>
 
-" Supertab will go in reverse direction by default,
-" so fix that
-let g:SuperTabDefaultCompletionType = "<c-n>"
-
 let g:tex_flavor = "latex"
+
+hi EasyMotionTarget2First  ctermbg=none ctermfg=lightred
+hi EasyMotionTarget2Second ctermbg=none ctermfg=lightred
+
+" Comment using C-/ (forward slash is _ for some reason)
+vmap <C-_> <Plug>NERDCommenterToggle<CR>gv
+
+nnoremap <M-p> "*p
+
+" Allow indenting multiple times in visual mode
+vnoremap > >gv
+vnoremap < <gv
+
+let g:clang_library_path='/usr/lib/libclang.so'
+let g:clang_use_library = 1
+
+" Allow sourcing .nvimrc from working directory (for project specific settings)
+set exrc
 
 " END GENERAL
 
@@ -228,16 +253,6 @@ let g:deoplete#enable_at_startup = 1
 
 let g:deoplete#sources#rust#show_duplicates = 1
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-"                    Neomake                     "
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Automatically open error list
-" let g:neomake_open_list=2
-
-" Automake when writing a buffer and normal mode changes (after 750ms)
-call neomake#configure#automake('nw', 750)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "                    fugitive                    "
@@ -301,7 +316,6 @@ let g:UltiSnipsExpandTrigger = "\\t"
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'dracula'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -320,3 +334,4 @@ let s:localConfigPath = expand('<sfile>:p:h') . '/localconfig.vim'
 if filereadable(s:localConfigPath)
     execute 'source ' fnameescape(s:localConfigPath)
 endif
+

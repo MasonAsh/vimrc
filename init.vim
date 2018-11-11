@@ -70,6 +70,8 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'rhysd/vim-clang-format'
 " Completions
 Plug 'Valloric/YouCompleteMe'
+" Solarized
+Plug 'altercation/vim-colors-solarized'
 
 call plug#end()
 
@@ -79,9 +81,9 @@ call plug#end()
 
 syntax on
 
-set t_Co=256
+" set t_Co=256
 
-set background=light
+set background=dark
 colorscheme PaperColor
 
 " Remap leader key to space

@@ -56,7 +56,7 @@ Plug 'justinmk/vim-sneak'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 " typescript
-Plug 'mhartington/nvim-typescript'
+" Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 Plug 'HerringtonDarkholme/yats.vim'
 " Git diff information in number line
 Plug 'airblade/vim-gitgutter'
@@ -72,6 +72,8 @@ Plug 'rhysd/vim-clang-format'
 Plug 'Valloric/YouCompleteMe'
 " Solarized
 Plug 'altercation/vim-colors-solarized'
+" Shows tags in a nice little window
+Plug 'majutsushi/tagbar'
 
 call plug#end()
 

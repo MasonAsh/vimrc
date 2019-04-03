@@ -69,11 +69,15 @@ Plug 'NLKNguyen/papercolor-theme'
 " clang-format
 Plug 'rhysd/vim-clang-format'
 " Completions
-Plug 'Valloric/YouCompleteMe'
+" Plug 'Valloric/YouCompleteMe'
 " Solarized
 Plug 'altercation/vim-colors-solarized'
 " Shows tags in a nice little window
 Plug 'majutsushi/tagbar'
+" Language servers
+Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+" HTML/JSX helper
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
@@ -85,7 +89,6 @@ syntax on
 
 " set t_Co=256
 
-set background=dark
 colorscheme PaperColor
 
 " Remap leader key to space
@@ -99,8 +102,6 @@ inoremap kj <ESC>
 
 " Quickly write a file using <space>s
 nnoremap <leader>s :w<cr>
-" Quickly write a file then quit using <space>q
-nnoremap <leader>q :wq<cr>
 
 " ctrl+j/k deletes blank line above or below cursor, alt+j/k inserts
 nnoremap <silent><C-A-j> m`:silent +g/\m^\s*$/d<CR>``:noh<CR>
@@ -212,6 +213,9 @@ let g:clang_use_library = 1
 
 " Allow sourcing .nvimrc from working directory (for project specific settings)
 set exrc
+
+" 2 space indent is pretty typical in javascript projects
+autocmd FileType javascript setlocal shiftwidth=2
 
 " END GENERAL
 
@@ -328,6 +332,38 @@ let g:airline#extensions#tabline#enabled = 1
 
 autocmd BufWritePost *.tex :!pdflatex %
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+"                      COC                       "
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K for show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+" Remap for rename current word
+nmap <leader>rn <Plug>(coc-rename)
+
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Highlight symbol under cursor on CursorHold
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 "              Local Configuration               "

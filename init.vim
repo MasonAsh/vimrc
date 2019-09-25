@@ -32,7 +32,7 @@ Plug 'tpope/vim-fugitive'
 " Easy motion
 Plug 'easymotion/vim-easymotion'
 " Racer support for rust completion
-Plug 'racer-rust/vim-racer'
+" Plug 'racer-rust/vim-racer'
 " Distraction free mode
 Plug 'junegunn/goyo.vim'
 " Text alignment (required for vim-markdown)
@@ -78,6 +78,10 @@ Plug 'majutsushi/tagbar'
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 " HTML/JSX helper
 Plug 'mattn/emmet-vim'
+" Purescript
+Plug 'raichoo/purescript-vim'
+" Haskell devtools
+Plug 'bitc/vim-hdevtools'
 
 call plug#end()
 
@@ -217,6 +221,19 @@ set exrc
 " 2 space indent is pretty typical in javascript projects
 autocmd FileType javascript setlocal shiftwidth=2
 
+nmap <leader>y "yy
+nmap <leader>p "yp
+
+highlight ALEError ctermbg=none cterm=underline
+
+autocmd FileType haskell setlocal shiftwidth=2
+
+let g:hdevtools_stack = 1
+
+autocmd FileType haskell nnoremap K :HdevToolsType
+
+let g:hdevtools_options = '-g-fdefer-type-errors'
+
 " END GENERAL
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
@@ -305,7 +322,7 @@ let g:pymode_breakpoint_bind = '<leader>pb'
 "                     racer                      "
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
-au FileType rust nmap gd <Plug>(rust-def)
+" au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
@@ -324,6 +341,7 @@ let g:UltiSnipsExpandTrigger = "\\t"
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_b = '%{coc#status()}'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
